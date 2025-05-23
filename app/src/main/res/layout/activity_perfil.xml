@@ -1,0 +1,121 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_ver_titulo"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2C3E50"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" />
+
+        <!-- Nombre -->
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_nombre_label"
+            android:textSize="18sp"
+            android:background="#ffffff"
+            android:textColor="#34495E"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Apellido -->
+        <TextView
+            android:id="@+id/tvApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_apellido_label"
+            android:background="#ffffff"
+            android:textSize="18sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="16dp" />
+
+        <!-- DNI -->
+        <TextView
+            android:id="@+id/tvDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_dni_label"
+            android:background="#ffffff"
+            android:textSize="18sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Email -->
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_email_label"
+            android:background="#ffffff"
+            android:textSize="18sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Teléfono -->
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_telefono_label"
+            android:background="#ffffff"
+            android:textSize="18sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Usuario -->
+        <TextView
+            android:id="@+id/tvUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_usuario_label"
+            android:textSize="18sp"
+            android:background="#ffffff"
+            android:textColor="#34495E"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Contraseña -->
+        <TextView
+            android:id="@+id/tvContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_contrasena_label"
+            android:textSize="18sp"
+            android:background="#ffffff"
+            android:textColor="#34495E"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botón Editar Perfil -->
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_boton_editar"
+            android:background="@drawable/btn_rect_secondary"
+            android:padding="16dp"
+            android:layout_marginTop="20dp" />
+
+        <!-- Botón Volver -->
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_boton_volver"
+            android:background="@drawable/btn_rect_red"
+            android:padding="16dp"
+            android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+</ScrollView>

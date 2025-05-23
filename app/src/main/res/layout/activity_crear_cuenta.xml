@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/background">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Cuena_new_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"/>
+
+    <!-- Saldo -->
+    <EditText
+        android:id="@+id/etSaldo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Cuena_new_Saldo"
+        android:inputType="numberDecimal"
+        android:background="@android:drawable/edit_text"
+        android:textColor="@color/textPrimary"
+        android:layout_marginBottom="16dp"
+        android:padding="10dp"/>
+
+    <!-- Moneda como Spinner -->
+    <Spinner
+        android:id="@+id/spinnerMoneda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp"
+        android:entries="@array/moneda"
+        android:spinnerMode="dropdown" />
+
+    <!-- Botón Guardar -->
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Cuena_new_B_guardar"
+        android:background="@drawable/btn_rect_secondary"
+        android:padding="16dp"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

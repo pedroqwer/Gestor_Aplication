@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Perfil_up_title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2C3E50"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" />
+
+        <!-- Nombre -->
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Perfil_up_Nombre"
+            android:background="@android:drawable/edit_text"
+            android:textColor="@color/textPrimary"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp" />
+
+        <!-- Apellido -->
+        <EditText
+            android:id="@+id/etApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Perfil_up_Apellido"
+            android:background="@android:drawable/edit_text"
+            android:textColor="@color/textPrimary"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp" />
+
+        <!-- DNI -->
+        <EditText
+            android:id="@+id/etDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Perfil_up_DNI"
+            android:background="@android:drawable/edit_text"
+            android:textColor="@color/textPrimary"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp" />
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Perfil_up_Email"
+            android:inputType="textEmailAddress"
+            android:background="@android:drawable/edit_text"
+            android:textColor="@color/textPrimary"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp" />
+
+        <!-- Teléfono -->
+        <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Perfil_up_Telefono"
+            android:inputType="number"
+            android:background="@android:drawable/edit_text"
+            android:textColor="@color/textPrimary"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp" />
+
+        <!-- Usuario -->
+
+        <!-- Contraseña -->
+
+        <!-- Botón Guardar Cambios -->
+        <Button
+            android:id="@+id/btnGuardarCambios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Perfil_up_B_Guardar"
+            android:background="@drawable/btn_rect_secondary"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Botón Cancelar -->
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Perfil_up_Cancelar"
+            android:background="@color/accent"
+            android:padding="16dp" />
+    </LinearLayout>
+</ScrollView>

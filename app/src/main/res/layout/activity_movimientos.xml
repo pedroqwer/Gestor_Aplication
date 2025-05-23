@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Aplicacion.api.gestor_aplication.Movimiento.Movimientos">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <!-- SALDO -->
+        <TextView
+            android:id="@+id/label_saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Movimientos_Saldo"
+            android:textColor="@color/textPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txsaldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textColor="@color/textPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/label_saldo"
+            app:layout_constraintBottom_toBottomOf="@id/label_saldo"
+            app:layout_constraintStart_toEndOf="@id/label_saldo"
+            android:layout_marginStart="8dp" />
+
+        <!-- INGRESOS -->
+        <TextView
+            android:id="@+id/label_ingresos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Movimientos_Ingresos"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/label_saldo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/txingresos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/label_ingresos"
+            app:layout_constraintBottom_toBottomOf="@id/label_ingresos"
+            app:layout_constraintStart_toEndOf="@id/label_ingresos"
+            android:layout_marginStart="8dp" />
+
+        <!-- GASTOS -->
+        <TextView
+            android:id="@+id/label_gastos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Movimientos_Gastos"
+            android:textColor="@color/accent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/label_ingresos"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/txgastos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textColor="@color/accent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/label_gastos"
+            app:layout_constraintBottom_toBottomOf="@id/label_gastos"
+            app:layout_constraintStart_toEndOf="@id/label_gastos"
+            android:layout_marginStart="8dp" />
+
+        <!-- BOTONES -->
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Movimientos_B_hacermovimiento"
+            android:background="@drawable/btn_rect_secondary"
+            app:layout_constraintTop_toBottomOf="@id/label_gastos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button5"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Movimientos_B_Ingreso_Gasto"
+            android:background="@drawable/btn_rect_secondary"
+            app:layout_constraintTop_toTopOf="@id/button4"
+            app:layout_constraintStart_toEndOf="@id/button4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginStart="8dp" />
+
+        <!-- LISTA DE MOVIMIENTOS -->
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp"
+            app:layout_constraintTop_toBottomOf="@id/button4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- DRAWER LATERAL -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/movi" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

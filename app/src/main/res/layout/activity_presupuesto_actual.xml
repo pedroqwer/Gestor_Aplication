@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Presupuesto_actual_title"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#2C3E50"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Cantidad Limite -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Presupuesto_actual_CantidadLimite"
+            android:textSize="18sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Descripción -->
+        <TextView
+            android:id="@+id/tvCantidadLimite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="#ffffff"
+            android:elevation="2dp"
+            android:padding="12dp"
+            android:text="$0.00"
+            android:textColor="#2C3E50"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Presupuesto_actual_Descripcion"
+            android:textSize="18sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin descripción"
+            android:textSize="18sp"
+            android:textColor="#2C3E50"
+            android:padding="12dp"
+            android:background="#ffffff"
+            android:elevation="2dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Fecha -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Presupuesto_actual_Fecha"
+            android:textSize="18sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01/01/2025"
+            android:textSize="18sp"
+            android:textColor="#2C3E50"
+            android:padding="12dp"
+            android:background="#ffffff"
+            android:elevation="2dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Información adicional -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Presupuesto_actual_Informacion"
+            android:textSize="18sp"
+            android:textColor="#34495E"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvExtraInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ninguna"
+            android:textSize="18sp"
+            android:textColor="#2C3E50"
+            android:padding="12dp"
+            android:background="#ffffff"
+            android:elevation="2dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Presupuesto_actual_B_editar"
+                android:background="@drawable/btn_rect_secondary"
+                android:layout_marginEnd="8dp"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnvolver"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Presupuesto_actual_B_volver"
+                android:background="@drawable/btn_rect_red"
+                android:padding="12dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

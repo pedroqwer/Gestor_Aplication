@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="primary">#4CAF50</color> <!-- Verde para ingresos -->
+    <color name="secondary">#2196F3</color> <!-- Azul para botones y navegación -->
+    <color name="accent">#F44336</color> <!-- Rojo para gastos -->
+    <color name="background">#CCFFCC</color> <!-- Fondo general -->
+    <color name="textPrimary">#333333</color> <!-- Texto oscuro -->
+    <color name="white">#FFFFFF</color>
+
+    <color name="success">#2E7D32</color> <!-- Verde más oscuro para confirmar acciones -->
+    <color name="warning">#FF9800</color> <!-- Naranja para advertencias o pendientes -->
+    <color name="info">#03A9F4</color> <!-- Azul claro para notificaciones neutras -->
+    <color name="neutral">#BDBDBD</color> <!-- Gris medio para bordes, íconos inactivos -->
+    <color name="backgroundLight">#F5F5F5</color> <!-- Fondo suave alternativo -->
+    <color name="cardBackground">#FFFFFF</color> <!-- Tarjetas o bloques de contenido -->
+    <color name="divider">#E0E0E0</color> <!-- Líneas divisorias sutiles -->
+    <color name="textSecondary">#757575</color> <!-- Texto secundario -->
+    <color name="textInverse">#FFFFFF</color> <!-- Texto sobre fondos oscuros -->
+
+</resources>

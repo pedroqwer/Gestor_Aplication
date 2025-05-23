@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="@color/background">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Presupuesto_select_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        android:layout_marginBottom="30dp"
+        android:gravity="center" />
+
+    <!-- Cantidad Limite -->
+    <TextView
+        android:id="@+id/tvCantidadLimite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="@string/Presupuesto_select_Cantidadlimite"
+        android:textSize="20sp"
+        android:textColor="#34495E"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp" />
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="@string/Presupuesto_select_descripción"
+        android:textSize="20sp"
+        android:textColor="#34495E"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp" />
+
+    <!-- Fecha -->
+    <TextView
+        android:id="@+id/tvFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Presupuesto_select_fecha"
+        android:background="#ffffff"
+        android:textSize="20sp"
+        android:textColor="#34495E"
+        android:layout_marginBottom="32dp"
+        android:padding="8dp" />
+
+    <!-- Botones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:weightSum="2">
+
+        <!-- Botón Volver -->
+        <Button
+            android:id="@+id/btnvolver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Presupuesto_select_B_Volver"
+            android:background="@drawable/btn_rect_red"
+            android:padding="12dp" />
+    </LinearLayout>
+</LinearLayout>

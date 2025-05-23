@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/Ayuda"
+        android:title="Comunicación"/>
+    <item
+        android:id="@+id/work"
+        android:title="Funcionamiento"/>
+    <item
+        android:id="@+id/descarga"
+        android:title="Descargar manual"/>
+</menu>

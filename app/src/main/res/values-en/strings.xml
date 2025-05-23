@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gestor_Aplication</string>
+
+    <string name="Inicio">My Expense Tracker</string>
+    <string name="MainNombreUser">Username</string>
+    <string name="MainContraseña">Password</string>
+    <string name="MainButtonIniciarSesion">Log In</string>
+    <string name="MainButtonRegistrar">Register</string>
+
+    <string name="Movimiento_up_title">Update Transaction</string>
+    <string name="Movimiento_up_cantidad">Amount</string>
+    <string name="Movimiento_up_descripcion">Description</string>
+    <string name="Movimiento_up_tipo">Type</string>
+    <string name="Movimiento_up_B_cancelar">Cancel</string>
+    <string name="Movimiento_up_B_guardar">Save</string>
+
+    <string name="Presupuesto_up_title">Update Budget</string>
+    <string name="Presupuesto_up_cantidadLimite">Limit Amount</string>
+    <string name="Presupuesto_up_descripción">Description</string>
+    <string name="Presupuesto_up_B_actualizar">Update</string>
+    <string name="Presupuesto_up_title_B_cancelar">Cancel</string>
+
+    <string name="Cuena_new_title">Create New Account</string>
+    <string name="Cuena_new_Saldo">Balance</string>
+    <string name="Cuena_new_Moneda">Currency (euros, dollars)</string>
+    <string name="Cuena_new_B_guardar">Save</string>
+    <string name="Cuena_new_B_cancelar">Cancel</string>
+
+    <string name="Movimiento_new_title">Create Transaction</string>
+    <string name="Movimiento_new_Cantidad">Amount</string>
+    <string name="Movimiento_new_Descripción">Description</string>
+    <string name="Movimiento_new_B_guardar">Save</string>
+    <string name="Movimiento_new_B_cancelar">Cancel</string>
+
+    <string name="Presupuesto_new_title">Create Budget</string>
+    <string name="Presupuesto_new_Cantidad">Limit Amount</string>
+    <string name="Presupuesto_new_Descripción">Description</string>
+    <string name="Presupuesto_new_B_guardar">Save</string>
+    <string name="Presupuesto_new_B_cancelar">Cancel</string>
+
+    <string name="Cuenta_title">Bank Account</string>
+    <string name="Cuenta_Id">Account ID:</string>
+    <string name="Cuenta_Nombre_User">Username:</string>
+    <string name="Cuenta_Saldo_Actual">Current Balance:</string>
+    <string name="Cuenta_Moneda">Currency:</string>
+    <string name="Cuenta_B_Volver">Back</string>
+
+    <string name="Funcionamiento_title">Welcome to S_Gestor</string>
+    <string name="Funcionamiento_txt">Here you will find all the relevant information about how to use this app. Scroll down to read more. You can add as much content here as needed...</string>
+    <string name="Funcionamiento_Button">Back</string>
+
+    <string name="Historial_title">Action History</string>
+    <string name="Historial_Button">Back</string>
+
+    <string name="auditoria_usuario">User:</string>
+    <string name="auditoria_accion">Action:</string>
+    <string name="auditoria_fecha">Date:</string>
+    <string name="auditoria_detalles">Details:</string>
+    <string name="auditoria_boton_volver">Back</string>
+
+    <string name="Usuarios_Registrados_title">Registered Users</string>
+    <string name="Usuarios_Registrados_Button">Back</string>
+
+    <string name="Movimientos_Saldo">Balance</string>
+    <string name="Movimientos_Ingresos">Income</string>
+    <string name="Movimientos_Gastos">Expenses</string>
+    <string name="Movimientos_B_hacermovimiento">Make Transaction</string>
+    <string name="Movimientos_B_Ingreso_Gasto">Income/Expenses</string>
+
+    <string name="Movimoento_Select_Title">Transaction Details</string>
+    <string name="Movimoento_Select_Cantidad">Amount</string>
+    <string name="Movimoento_Select_Descripcion">Description</string>
+    <string name="Movimoento_Select_Fecha">Date</string>
+    <string name="Movimoento_Select_Tipo">Type</string>
+    <string name="Movimoento_Select_B_volver">Back</string>
+    <string name="Movimoento_Select_B_actualizar">Update</string>
+
+    <string name="Perfil_up_title">Update Profile</string>
+    <string name="Perfil_up_Nombre">First Name</string>
+    <string name="Perfil_up_Apellido">Last Name</string>
+    <string name="Perfil_up_DNI">ID Number</string>
+    <string name="Perfil_up_Email">Email</string>
+    <string name="Perfil_up_Telefono">Phone</string>
+    <string name="Perfil_up_User">Username</string>
+    <string name="Perfil_up_Pass">Password</string>
+    <string name="Perfil_up_B_Guardar">Save Changes</string>
+    <string name="Perfil_up_Cancelar">Cancel</string>
+
+    <string name="Presupuest_title">Budgets</string>
+    <string name="Presupuesto_Button">Add Budget</string>
+
+    <string name="Presupuesto_actual_title">Budget Details</string>
+    <string name="Presupuesto_actual_CantidadLimite">Limit Amount</string>
+    <string name="Presupuesto_actual_Descripcion">Description</string>
+    <string name="Presupuesto_actual_Fecha">Date</string>
+    <string name="Presupuesto_actual_Informacion">Additional Information</string>
+    <string name="Presupuesto_actual_B_editar">Edit</string>
+    <string name="Presupuesto_actual_B_volver">Back</string>
+
+    <string name="Presupuesto_select_title">Budget Details</string>
+    <string name="Presupuesto_select_Cantidadlimite">Limit Amount</string>
+    <string name="Presupuesto_select_descripción">Description</string>
+    <string name="Presupuesto_select_fecha">Date</string>
+    <string name="Presupuesto_select_B_Volver">Back</string>
+
+    <string name="registro_titulo">Sign Up</string>
+    <string name="registro_hint_nombre">First Name</string>
+    <string name="registro_hint_apellido">Last Name</string>
+    <string name="registro_hint_dni">ID Number</string>
+    <string name="registro_hint_email">Email</string>
+    <string name="registro_hint_telefono">Phone</string>
+    <string name="registro_hint_usuario">Username</string>
+    <string name="registro_hint_contrasena">Password</string>
+    <string name="registro_boton_cancelar">Cancel</string>
+    <string name="registro_boton_registrar">Register</string>
+
+    <string name="perfil_ver_titulo">View Profile</string>
+    <string name="perfil_nombre_label">First Name:</string>
+    <string name="perfil_apellido_label">Last Name:</string>
+    <string name="perfil_dni_label">ID Number:</string>
+    <string name="perfil_email_label">Email:</string>
+    <string name="perfil_telefono_label">Phone:</string>
+    <string name="perfil_usuario_label">Username:</string>
+    <string name="perfil_contrasena_label">Password: ********</string>
+    <string name="perfil_boton_editar">Edit Profile</string>
+    <string name="perfil_boton_volver">Back</string>
+
+    <string name="perfil_titulo">User Profile</string>
+    <string name="perfil_nombre">First Name:</string>
+    <string name="perfil_apellido">Last Name:</string>
+    <string name="perfil_email">Email:</string>
+    <string name="perfil_dni">ID Number:</string>
+    <string name="perfil_telefono">Phone:</string>
+    <string name="perfil_usuario">Username:</string>
+    <string name="perfil_contrasena">Password:</string>
+    <string name="perfil_id">ID:</string>
+    <string name="perfil_btn_volver">Back</string>
+
+    <string-array name="cate">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+    <string-array name="moneda">
+        <item>USD - United States Dollar</item>
+        <item>EUR - Euro</item>
+        <item>JPY - Japanese Yen</item>
+        <item>GBP - British Pound Sterling</item>
+        <item>AUD - Australian Dollar</item>
+        <item>CAD - Canadian Dollar</item>
+        <item>CHF - Swiss Franc</item>
+        <item>CNY - Chinese Yuan</item>
+        <item>SEK - Swedish Krona</item>
+        <item>NZD - New Zealand Dollar</item>
+        <item>MXN - Mexican Peso</item>
+        <item>SGD - Singapore Dollar</item>
+        <item>HKD - Hong Kong Dollar</item>
+        <item>NOK - Norwegian Krone</item>
+        <item>KRW - South Korean Won</item>
+        <item>TRY - Turkish Lira</item>
+        <item>INR - Indian Rupee</item>
+        <item>RUB - Russian Ruble</item>
+        <item>BRL - Brazilian Real</item>
+        <item>ZAR - South African Rand</item>
+        <item>DKK - Danish Krone</item>
+        <item>PLN - Polish Zloty</item>
+        <item>TWD - New Taiwan Dollar</item>
+        <item>THB - Thai Baht</item>
+        <item>IDR - Indonesian Rupiah</item>
+        <item>HUF - Hungarian Forint</item>
+        <item>CZK - Czech Koruna</item>
+        <item>ILS - Israeli New Shekel</item>
+        <item>CLP - Chilean Peso</item>
+        <item>PHP - Philippine Peso</item>
+        <item>AED - United Arab Emirates Dirham</item>
+        <item>COP - Colombian Peso</item>
+        <item>SAR - Saudi Riyal</item>
+        <item>MYR - Malaysian Ringgit</item>
+        <item>RON - Romanian Leu</item>
+        <item>PKR - Pakistani Rupee</item>
+        <item>EGP - Egyptian Pound</item>
+        <item>NGN - Nigerian Naira</item>
+        <item>KZT - Kazakhstani Tenge</item>
+        <item>BDT - Bangladeshi Taka</item>
+        <item>UAH - Ukrainian Hryvnia</item>
+        <item>VND - Vietnamese Dong</item>
+        <item>DOP - Dominican Peso</item>
+        <item>LKR - Sri Lankan Rupee</item>
+        <item>KES - Kenyan Shilling</item>
+        <item>GHS - Ghanaian Cedi</item>
+        <item>JMD - Jamaican Dollar</item>
+        <item>QAR - Qatari Riyal</item>
+        <item>OMR - Omani Rial</item>
+        <item>KWD - Kuwaiti Dinar</item>
+        <item>BHD - Bahraini Dinar</item>
+        <item>ISK - Icelandic Krona</item>
+        <item>HRK - Croatian Kuna</item>
+        <item>BGN - Bulgarian Lev</item>
+        <item>MAD - Moroccan Dirham</item>
+        <item>TND - Tunisian Dinar</item>
+        <item>LBP - Lebanese Pound</item>
+        <item>UZS - Uzbekistani Som</item>
+        <item>BYN - Belarusian Ruble</item>
+        <item>AZN - Azerbaijani Manat</item>
+        <item>MKD - Macedonian Denar</item>
+        <item>MDL - Moldovan Leu</item>
+        <item>JOD - Jordanian Dinar</item>
+        <item>ETB - Ethiopian Birr</item>
+        <item>AFN - Afghan Afghani</item>
+        <item>BAM - Bosnia and Herzegovina Convertible Mark</item>
+        <item>ALL - Albanian Lek</item>
+        <item>AMD - Armenian Dram</item>
+        <item>BWP - Botswana Pula</item>
+        <item>FJD - Fijian Dollar</item>
+        <item>GEL - Georgian Lari</item>
+        <item>JEP - Jersey Pound</item>
+        <item>KGS - Kyrgyzstani Som</item>
+        <item>LAK - Lao Kip</item>
+        <item>MWK - Malawian Kwacha</item>
+        <item>MVR - Maldivian Rufiyaa</item>
+        <item>PGK - Papua New Guinean Kina</item>
+        <item>PYG - Paraguayan Guarani</item>
+        <item>RSD - Serbian Dinar</item>
+        <item>SOS - Somali Shilling</item>
+        <item>SRD - Surinamese Dollar</item>
+        <item>SYP - Syrian Pound</item>
+        <item>TJS - Tajikistani Somoni</item>
+        <item>TMT - Turkmenistani Manat</item>
+        <item>TOP - Tongan Paʻanga</item>
+        <item>TTD - Trinidad and Tobago Dollar</item>
+        <item>TZS - Tanzanian Shilling</item>
+        <item>XAF - Central African CFA Franc</item>
+        <item>XCD - East Caribbean Dollar</item>
+        <item>XOF - West African CFA Franc</item>
+        <item>XPF - CFP Franc</item>
+        <item>YER - Yemeni Rial</item>
+        <item>ZMW - Zambian Kwacha</item>
+        <item>ZWL - Zimbabwean Dollar</item>
+    </string-array>
+
+</resources>

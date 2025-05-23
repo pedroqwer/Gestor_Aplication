@@ -1,0 +1,66 @@
+Gestión de Gastos Personales – Versión Android
+
+1. ¿Qué es S_Gestor?
+S_Gestor es una aplicación para móviles Android que te ayuda a gestionar tu dinero de forma sencilla y organizada.
+Puedes controlar tus ingresos, gastos, presupuestos mensuales y ver el historial de tus acciones financieras.
+
+2. ¿Qué necesitas para empezar?
+- Un móvil Android.
+- Conexión a internet.
+- Registrarte con un nombre de usuario y contraseña.
+- Acceso como usuario normal o administrador (según tu perfil).
+
+3. Funciones principales
+
+✅ Crear presupuesto mensual
+- Indica cuánto quieres gastar cada mes.
+- Añade una descripción (por ejemplo, "Gastos noviembre").
+- El presupuesto se guarda para ayudarte a no pasarte del límite.
+
+✅ Registrar movimientos (ingresos o gastos)
+- Apunta cada gasto o ingreso que tengas.
+- Añade una descripción, la cantidad y la fecha.
+- Tambien puedes ver el total de ingresos y gastos además del saldo.
+
+✅ Crear cuenta bancaria
+- Solo puedes crear una cuenta.
+- Indica el saldo inicial y la moneda (ej: euros).
+- La cuenta sirve para ver cuánto dinero tienes disponible.
+
+✅ Ver tus movimientos
+- Puedes ver tus movimientos ordenados por:
+  - Más recientes
+  - Solo ingresos
+  - Solo gastos
+
+✅ Ver tus presupuestos
+- Consulta los presupuestos creados y en qué mes estás.
+
+✅ Consultar historial de acciones
+- Revisa todo lo que has hecho (crear, editar o borrar algo).
+- Se muestra por orden desde lo más antiguo a lo más reciente.
+
+✅ Modificar y borrar información
+- Puedes editar presupuestos y movimientos.
+- También puedes borrar presupuestos que no necesites.
+
+4. Perfil de usuario
+- Usuario normal: puede gestionar su presupuesto, cuenta y movimientos.
+
+5. Seguridad
+- Accedes a la app con usuario y contraseña.
+- La app usa un sistema seguro de autenticación (JWT).
+- Solo tú puedes ver o modificar tus datos.
+
+6. Consejos de uso
+- Mantén tus datos actualizados.
+- Revisa tus movimientos cada semana.
+- Usa los presupuestos para controlar tus gastos.
+
+7. Futuras mejoras
+- Gráficos para ver tus gastos de forma visual.
+- Notificaciones para avisarte cuando superes un presupuesto.
+- Conexión con bancos reales para importar movimientos automáticamente.
+
+¿Listo para llevar el control de tus finanzas?
+¡Empieza ya con S_Gestor!

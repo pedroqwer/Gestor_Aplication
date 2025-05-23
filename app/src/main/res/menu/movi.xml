@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="-- Opciones --">
+        <menu>
+            <item
+                android:id="@+id/Perfil"
+                android:title="Perfil"/>
+
+            <item
+                android:id="@+id/Presupuesto"
+                android:title="Presupuestos"/>
+
+            <item
+                android:id="@+id/Historial"
+                android:title="Historial de acciones"/>
+
+            <item
+                android:id="@+id/CuentaBancaria"
+                android:title="Cuenta Bancaria"/>
+
+            <item
+                android:id="@+id/PresupuestoActul"
+                android:title="Presupuesto actual"/>
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_launcher_foreground"
+                android:title="Cerrar Sesión" />
+        </menu>
+    </item>
+</menu>

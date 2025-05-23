@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gestor_Aplication</string>
+
+    <!-- Main -->
+    <string name="Inicio">Mi Control de Gastos</string>
+    <string name="MainNombreUser">Nombre de usuario</string>
+    <string name="MainContraseña">Contraseña</string>
+    <string name="MainButtonIniciarSesion">Iniciar Sesión</string>
+    <string name="MainButtonRegistrar">Registrar</string>
+
+    <!-- Actualizar movimiento -->
+    <string name="Movimiento_up_title">Actualizar Movimiento</string>
+    <string name="Movimiento_up_cantidad">Cantidad</string>
+    <string name="Movimiento_up_descripcion">Descripción</string>
+    <string name="Movimiento_up_tipo">Tipo</string>
+    <string name="Movimiento_up_B_cancelar">Cancelar</string>
+    <string name="Movimiento_up_B_guardar">Guardar</string>
+
+    <!-- Actualizar presupuesto -->
+    <string name="Presupuesto_up_title">Actualizar Presupuesto</string>
+    <string name="Presupuesto_up_cantidadLimite">Cantidad Límite</string>
+    <string name="Presupuesto_up_descripción">Descripción</string>
+    <string name="Presupuesto_up_B_actualizar">Actualizar</string>
+    <string name="Presupuesto_up_title_B_cancelar">Cancelar</string>
+
+    <!-- Crear Cuenta -->
+    <string name="Cuena_new_title">Crear Nueva Cuenta</string>
+    <string name="Cuena_new_Saldo">Saldo</string>
+    <string name="Cuena_new_Moneda">Moneda (euros, dolares)</string>
+    <string name="Cuena_new_B_guardar">Guardar</string>
+    <string name="Cuena_new_B_cancelar">Cncelar</string>
+
+    <!-- Crear Movimiento -->
+    <string name="Movimiento_new_title">Crear Movimiento</string>
+    <string name="Movimiento_new_Cantidad">Cantidad</string>
+    <string name="Movimiento_new_Descripción">Descripción</string>
+    <string name="Movimiento_new_B_guardar">Guardar</string>
+    <string name="Movimiento_new_B_cancelar">Cancelar</string>
+
+    <!-- Crear Presupuesto -->
+    <string name="Presupuesto_new_title">Crear Presupuesto</string>
+    <string name="Presupuesto_new_Cantidad">Cantidad Límite</string>
+    <string name="Presupuesto_new_Descripción">Descripción</string>
+    <string name="Presupuesto_new_B_guardar">Guardar</string>
+    <string name="Presupuesto_new_B_cancelar">Cancelar</string>
+
+    <!-- Cuenta Bamcaria -->
+    <string name="Cuenta_title">Cuenta Bancaria</string>
+    <string name="Cuenta_Id">ID de Cuenta:</string>
+    <string name="Cuenta_Nombre_User">Nombre de Usuario:</string>
+    <string name="Cuenta_Saldo_Actual">Saldo Actual:</string>
+    <string name="Cuenta_Moneda">Moneda:</string>
+    <string name="Cuenta_B_Volver">Volver</string>
+
+    <!-- Funcionamiento -->
+    <string name="Funcionamiento_title">Bienvenido a S_Gestor</string>
+    <string name="Funcionamiento_txt">Aquí encontrarás toda la
+        información relevante sobre el uso de esta aplicación.
+        Desliza hacia abajo para leer más contenido.
+        Puedes agregar aquí cualquier cantidad de texto que necesites...</string>
+    <string name="Funcionamiento_Button">Volver</string>
+
+    <!-- Historial Acciones -->
+    <string name="Historial_title">Historialn de Acciones</string>
+    <string name="Historial_Button">Volver</string>
+
+    <!-- Vista de Auditoría -->
+    <string name="auditoria_usuario">Usuario:</string>
+    <string name="auditoria_accion">Acción:</string>
+    <string name="auditoria_fecha">Fecha:</string>
+    <string name="auditoria_detalles">Detalles:</string>
+    <string name="auditoria_boton_volver">Volver</string>
+
+    <!-- Lista usuarios -->
+    <string name="Usuarios_Registrados_title">Usuarios Resgistrados</string>
+    <string name="Usuarios_Registrados_Button">Volver</string>
+
+    <!-- Movimientos -->
+    <string name="Movimientos_Saldo">Saldo</string>
+    <string name="Movimientos_Ingresos">Ingresos</string>
+    <string name="Movimientos_Gastos">Gastos</string>
+    <string name="Movimientos_B_hacermovimiento">Hacer movimiento</string>
+    <string name="Movimientos_B_Ingreso_Gasto">Ingrasos/Gastos</string>
+
+    <!-- Movimiento  Seleccionado-->
+    <string name="Movimoento_Select_Title">Detalles del Movimiento</string>
+    <string name="Movimoento_Select_Cantidad">Cantidad</string>
+    <string name="Movimoento_Select_Descripcion">Descripción</string>
+    <string name="Movimoento_Select_Fecha">Fecha</string>
+    <string name="Movimoento_Select_Tipo">Tipo</string>
+    <string name="Movimoento_Select_B_volver">Volver</string>
+    <string name="Movimoento_Select_B_actualizar">Actualizar</string>
+
+    <!-- Perfil Actualizar -->
+    <string name="Perfil_up_title">Actualizar Perfil</string>
+    <string name="Perfil_up_Nombre">Nombre</string>
+    <string name="Perfil_up_Apellido">Apellido</string>
+    <string name="Perfil_up_DNI">DNI</string>
+    <string name="Perfil_up_Email">Email</string>
+    <string name="Perfil_up_Telefono">Teléfono</string>
+    <string name="Perfil_up_User">Usruario</string>
+    <string name="Perfil_up_Pass">Contraseña</string>
+    <string name="Perfil_up_B_Guardar">Guardar Cambios</string>
+    <string name="Perfil_up_Cancelar">Cancelar</string>
+
+    <!-- Presupuesto -->
+    <string name="Presupuest_title">Presupuestos</string>
+    <string name="Presupuesto_Button">Agregar Presupuesto</string>
+
+    <!-- Presupuesto actual -->
+    <string name="Presupuesto_actual_title">Detalles del Presupuesto</string>
+    <string name="Presupuesto_actual_CantidadLimite">Cantidad Límite</string>
+    <string name="Presupuesto_actual_Descripcion">Descripción</string>
+    <string name="Presupuesto_actual_Fecha">Fecha</string>
+    <string name="Presupuesto_actual_Informacion">Información adicional</string>
+    <string name="Presupuesto_actual_B_editar">Editar</string>
+    <string name="Presupuesto_actual_B_volver">Volver</string>
+
+    <!-- Presupuesto Seleccionado -->
+    <string name="Presupuesto_select_title">Detalles del Presupuesto</string>
+    <string name="Presupuesto_select_Cantidadlimite">Cantidad Límite</string>
+    <string name="Presupuesto_select_descripción">Descripción</string>
+    <string name="Presupuesto_select_fecha">Fecha</string>
+    <string name="Presupuesto_select_B_Volver">Volver</string>
+
+    <!-- Registro de Usuario -->
+    <string name="registro_titulo">Registro</string>
+    <string name="registro_hint_nombre">Nombre</string>
+    <string name="registro_hint_apellido">Apellido</string>
+    <string name="registro_hint_dni">DNI</string>
+    <string name="registro_hint_email">Email</string>
+    <string name="registro_hint_telefono">Teléfono</string>
+    <string name="registro_hint_usuario">Usuario</string>
+    <string name="registro_hint_contrasena">Contraseña</string>
+    <string name="registro_boton_cancelar">Cancelar</string>
+    <string name="registro_boton_registrar">Registrar</string>
+
+    <!-- Vista de Perfil -->
+    <string name="perfil_ver_titulo">Ver Perfil</string>
+    <string name="perfil_nombre_label">Nombre:</string>
+    <string name="perfil_apellido_label">Apellido:</string>
+    <string name="perfil_dni_label">DNI:</string>
+    <string name="perfil_email_label">Email:</string>
+    <string name="perfil_telefono_label">Teléfono:</string>
+    <string name="perfil_usuario_label">Usuario:</string>
+    <string name="perfil_contrasena_label">Contraseña: ********</string>
+    <string name="perfil_boton_editar">Editar Perfil</string>
+    <string name="perfil_boton_volver">Volver</string>
+
+    <!-- Vista de Perfil de Usuario -->
+    <string name="perfil_titulo">Perfil del Usuario</string>
+    <string name="perfil_nombre">Nombre:</string>
+    <string name="perfil_apellido">Apellido:</string>
+    <string name="perfil_email">Correo electrónico:</string>
+    <string name="perfil_dni">DNI:</string>
+    <string name="perfil_telefono">Teléfono:</string>
+    <string name="perfil_usuario">Usuario:</string>
+    <string name="perfil_contrasena">Contraseña:</string>
+    <string name="perfil_id">ID:</string>
+    <string name="perfil_btn_volver">Volver</string>
+
+    <!-- Spinner -->
+    <string-array name="cate">
+        <item>Ingreso</item>
+        <item>Gasto</item>
+    </string-array>
+
+    <string-array name="moneda">
+        <item>USD - Dólar estadounidense</item>
+        <item>EUR - Euro</item>
+        <item>JPY - Yen japonés</item>
+        <item>GBP - Libra esterlina</item>
+        <item>AUD - Dólar australiano</item>
+        <item>CAD - Dólar canadiense</item>
+        <item>CHF - Franco suizo</item>
+        <item>CNY - Yuan chino</item>
+        <item>SEK - Corona sueca</item>
+        <item>NZD - Dólar neozelandés</item>
+        <item>MXN - Peso mexicano</item>
+        <item>SGD - Dólar de Singapur</item>
+        <item>HKD - Dólar de Hong Kong</item>
+        <item>NOK - Corona noruega</item>
+        <item>KRW - Won surcoreano</item>
+        <item>TRY - Lira turca</item>
+        <item>INR - Rupia india</item>
+        <item>RUB - Rublo ruso</item>
+        <item>BRL - Real brasileño</item>
+        <item>ZAR - Rand sudafricano</item>
+        <item>DKK - Corona danesa</item>
+        <item>PLN - Zloty polaco</item>
+        <item>TWD - Nuevo dólar taiwanés</item>
+        <item>THB - Baht tailandés</item>
+        <item>IDR - Rupia indonesia</item>
+        <item>HUF - Forint húngaro</item>
+        <item>CZK - Corona checa</item>
+        <item>ILS - Nuevo shéquel israelí</item>
+        <item>CLP - Peso chileno</item>
+        <item>PHP - Peso filipino</item>
+        <item>AED - Dirham de los Emiratos Árabes Unidos</item>
+        <item>COP - Peso colombiano</item>
+        <item>SAR - Riyal saudí</item>
+        <item>MYR - Ringgit malayo</item>
+        <item>RON - Leu rumano</item>
+        <item>PKR - Rupia pakistaní</item>
+        <item>EGP - Libra egipcia</item>
+        <item>NGN - Naira nigeriana</item>
+        <item>KZT - Tenge kazajo</item>
+        <item>BDT - Taka bangladesí</item>
+        <item>UAH - Hryvnia ucraniana</item>
+        <item>VND - Dong vietnamita</item>
+        <item>DOP - Peso dominicano</item>
+        <item>LKR - Rupia de Sri Lanka</item>
+        <item>KES - Chelín keniano</item>
+        <item>GHS - Cedi ghanés</item>
+        <item>JMD - Dólar jamaicano</item>
+        <item>QAR - Riyal catarí</item>
+        <item>OMR - Rial omaní</item>
+        <item>KWD - Dinar kuwaití</item>
+        <item>BHD - Dinar bahreiní</item>
+        <item>ISK - Corona islandesa</item>
+        <item>HRK - Kuna croata</item>
+        <item>BGN - Lev búlgaro</item>
+        <item>MAD - Dirham marroquí</item>
+        <item>TND - Dinar tunecino</item>
+        <item>LBP - Libra libanesa</item>
+        <item>UZS - Sum uzbeko</item>
+        <item>BYN - Rublo bielorruso</item>
+        <item>AZN - Manat azerí</item>
+        <item>MKD - Dinar macedonio</item>
+        <item>MDL - Leu moldavo</item>
+        <item>JOD - Dinar jordano</item>
+        <item>ETB - Birr etíope</item>
+        <item>AFN - Afgani afgano</item>
+        <item>BAM - Marco convertible bosnio</item>
+        <item>ALL - Lek albanés</item>
+        <item>AMD - Dram armenio</item>
+        <item>BWP - Pula botsuana</item>
+        <item>FJD - Dólar fiyiano</item>
+        <item>GEL - Lari georgiano</item>
+        <item>ISK - Corona islandesa</item>
+        <item>JEP - Libra de Jersey</item>
+        <item>KGS - Som kirguís</item>
+        <item>LAK - Kip laosiano</item>
+        <item>MWK - Kwacha malauí</item>
+        <item>MVR - Rufiyaa maldiva</item>
+        <item>PGK - Kina papúa</item>
+        <item>PYG - Guaraní paraguayo</item>
+        <item>RSD - Dinar serbio</item>
+        <item>SOS - Chelín somalí</item>
+        <item>SRD - Dólar surinamés</item>
+        <item>SYP - Libra siria</item>
+        <item>TJS - Somoni tayiko</item>
+        <item>TMT - Manat turcomano</item>
+        <item>TOP - Paʻanga tongano</item>
+        <item>TTD - Dólar trinitense</item>
+        <item>TZS - Chelín tanzano</item>
+        <item>UZS - Sum uzbeko</item>
+        <item>XAF - Franco CFA BEAC</item>
+        <item>XCD - Dólar del Caribe Oriental</item>
+        <item>XOF - Franco CFA BCEAO</item>
+        <item>XPF - Franco CFP</item>
+        <item>YER - Rial yemení</item>
+        <item>ZMW - Kwacha zambiano</item>
+        <item>ZWL - Dólar zimbabuense</item>
+    </string-array>
+
+</resources>
