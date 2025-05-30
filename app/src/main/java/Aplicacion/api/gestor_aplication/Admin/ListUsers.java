@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.gestor_aplication.R;
@@ -62,26 +64,63 @@ public class ListUsers extends AppCompatActivity {
                 User model = userList.get(position);
                 Log.d(getClass().getName(), model.toString());
 
+                // Opciones para mostrar en el diálogo
+                String[] opciones = {"Acceder", "Enviar SMS", "Eliminar", "Cancelar"};
+
                 new AlertDialog.Builder(ListUsers.this)
                         .setTitle("Opciones para " + model.getNombre())
-                        .setMessage("¿Qué deseas hacer con este usuario?")
-                        .setPositiveButton("Acceder", (dialog, which) -> {
-                            Intent intent = new Intent(ListUsers.this, USerSelected.class);
-                            long valor = (long) model.getId();
-                            intent.putExtra("id", valor);
-                            startActivity(intent);
+                        .setItems(opciones, (dialog, which) -> {
+                            switch (which) {
+                                case 0: // Acceder
+                                    Intent intentAcceder = new Intent(ListUsers.this, USerSelected.class);
+                                    intentAcceder.putExtra("id", (long) model.getId());
+                                    startActivity(intentAcceder);
+                                    break;
+
+                                case 1: // Enviar SMS
+                                    SMS(model);
+                                    break;
+
+                                case 2: // Eliminar
+                                    eliminarUsuario(model.getId());
+                                    break;
+
+                                case 3: // Cancelar
+                                    dialog.dismiss();
+                                    break;
+                            }
                         })
-                        .setNegativeButton("Eliminar", (dialog, which) -> {
-                            eliminarUsuario(model.getId()); // Función que tú defines para eliminar
-                        })
-                        .setNeutralButton("Cancelar", null)
                         .show();
             }
         });
+
         descargarPosts();
         button.setOnClickListener(v->{
             finish();
         });
+    }
+
+    private void SMS(User model) {
+        // Crear un EditText para introducir el mensaje
+        EditText input = new EditText(ListUsers.this);
+        input.setHint("Escribe tu mensaje");
+
+        new AlertDialog.Builder(ListUsers.this)
+                .setTitle("Mensaje a " + model.getNombre())
+                .setView(input)
+                .setPositiveButton("Enviar", (dialog1, which1) -> {
+                    String txt = input.getText().toString().trim();
+                    if (!txt.isEmpty()) {
+                        Intent intentSMS = new Intent(Intent.ACTION_VIEW);
+                        intentSMS.setData(Uri.parse("sms:" + model.getTelefono()));
+                        intentSMS.putExtra("sms_body", txt);
+                        startActivity(intentSMS);
+                    } else {
+                        CustomToast.show(ListUsers.this,"El mensaje no puede estar vacío");
+                    }
+                })
+                .setNegativeButton("Cancelar", null)
+                .show();
     }
 
     private void eliminarUsuario(long idUsuario) {

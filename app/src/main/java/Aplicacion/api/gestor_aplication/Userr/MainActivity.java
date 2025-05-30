@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 inputStream.close();
                 outputStream.close();
 
-                Toast.makeText(MainActivity.this, "PDF guardado en Descargas", Toast.LENGTH_SHORT).show();
+                CustomToast.show(MainActivity.this,"PDF guardado en Descargas");
 
                 Intent openPdfIntent = new Intent(Intent.ACTION_VIEW);
                 Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".provider", outputFile);
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(openPdfIntent);
 
             } catch (IOException e) {
-                Toast.makeText(MainActivity.this, "Error al guardar el PDF", Toast.LENGTH_SHORT).show();
+                CustomToast.show(MainActivity.this,"Error al guardar el PDF");
             }
         } else if (id == R.id.work) {
                 Intent intent = new Intent(MainActivity.this, Funcionamiento.class);
