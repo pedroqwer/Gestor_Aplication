@@ -14,14 +14,11 @@ import com.example.gestor_aplication.R;
 import java.io.IOException;
 
 import Aplicacion.api.Entity.ActualizarPresupuestoEntity;
-import Aplicacion.api.Entity.PresupuestoEntity;
 import Aplicacion.api.Interfaz.IControllers;
 import Aplicacion.api.ResponseEntity.MensajeResponse;
 import Aplicacion.api.Retrofit.RetrofitClient;
 import Aplicacion.api.gestor_aplication.Funcionamiento.CustomToast;
 import Aplicacion.api.gestor_aplication.Funcionamiento.Notificaciones;
-import Aplicacion.api.gestor_aplication.Movimiento.CrearMovimiento;
-import Aplicacion.api.gestor_aplication.Movimiento.Movimineto_Seleccionado;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,30 +27,33 @@ import retrofit2.Response;
 public class ActualizarPresupuesto extends AppCompatActivity {
     private long preid = -1;
     private String token;
-    EditText cantidad,descripción;
-    Button volver, Guarfar;
+    EditText cantidad, descripción;
+    Button volver, guardar;  // corregí "Guarfar" a "guardar"
     private static final String TAG = "ActualizarPresupuesto";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actualizar_presupuesto);
 
-        Inicializar();
+        inicializar();
         recibirDatos();
-        Preferencias();
-        volver.setOnClickListener(v -> {
-            finish();
-        });
-        Guarfar.setOnClickListener(v -> {
+        cargarPreferencias();
+
+        volver.setOnClickListener(v -> finish());
+
+        guardar.setOnClickListener(v -> {
             if (validar()) {
-                ActualizarDatos();
+                actualizarDatos();
             }
         });
     }
+
     private boolean validar() {
         boolean isValid = true;
 
-        String cantidadStr = cantidad.getText().toString().trim();
+        // Reemplazamos coma por punto para permitir decimales con coma
+        String cantidadStr = cantidad.getText().toString().trim().replace(",", ".");
         String descripcionStr = descripción.getText().toString().trim();
 
         if (cantidadStr.isEmpty()) {
@@ -86,19 +86,20 @@ public class ActualizarPresupuesto extends AppCompatActivity {
 
         return isValid;
     }
-    private void ActualizarDatos() {
-        String newCantidadStr = cantidad.getText().toString();
-        String newDescripcion = descripción.getText().toString();
+
+    private void actualizarDatos() {
+        // Reemplazamos coma por punto también aquí
+        String newCantidadStr = cantidad.getText().toString().trim().replace(",", ".");
+        String newDescripcion = descripción.getText().toString().trim();
 
         Double newCantidad;
         try {
             newCantidad = Double.parseDouble(newCantidadStr);
         } catch (NumberFormatException e) {
-            CustomToast.show(this, "Cantidad inválida debe ser sin decimales");
+            CustomToast.show(this, "Cantidad inválida");
             return;
         }
 
-        // Agregar el log para ver los datos nuevos antes de enviarlos
         Log.d(TAG, "Datos nuevos: Cantidad = " + newCantidad + ", Descripción = " + newDescripcion);
 
         ActualizarPresupuestoEntity actualizarPresupuestoEntity = new ActualizarPresupuestoEntity(newCantidad, newDescripcion);
@@ -113,13 +114,13 @@ public class ActualizarPresupuesto extends AppCompatActivity {
                     ResponseBody errorBody = response.errorBody();
                     try {
                         String errorResponse = errorBody != null ? errorBody.string() : "Error desconocido";
-                        Log.e("API", "Error al actualizar presupuesto: " + response.message());
+                        Log.e(TAG, "Error al actualizar presupuesto: " + response.message() + " - " + errorResponse);
                         CustomToast.show(ActualizarPresupuesto.this, "Error: " + errorResponse);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else {
-                    CustomToast.show(ActualizarPresupuesto.this, "Presupuesto actualizado " + response.message());
+                    CustomToast.show(ActualizarPresupuesto.this, "Presupuesto actualizado correctamente");
                     Notificaciones.mostrarNotificacionSimple(ActualizarPresupuesto.this, "Actualización de presupuesto", "¡Actualización!");
 
                     Intent resultIntent = new Intent();
@@ -131,8 +132,8 @@ public class ActualizarPresupuesto extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<MensajeResponse> call, Throwable throwable) {
-                Log.e("ActualizarPresupuesto", "Fallo la petición: ", throwable);
+            public void onFailure(Call<MensajeResponse> call, Throwable t) {
+                Log.e(TAG, "Fallo la petición: ", t);
                 CustomToast.show(ActualizarPresupuesto.this, "No se pudo conectar con el servidor");
             }
         });
@@ -152,7 +153,7 @@ public class ActualizarPresupuesto extends AppCompatActivity {
         }
     }
 
-    private void Preferencias() {
+    private void cargarPreferencias() {
         token = getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("jwt_token", null);
         if (token == null || token.isEmpty()) {
             Log.e(TAG, "Token no disponible");
@@ -163,10 +164,10 @@ public class ActualizarPresupuesto extends AppCompatActivity {
         }
     }
 
-    private void Inicializar() {
+    private void inicializar() {
         cantidad = findViewById(R.id.etCantidadLimite);
         descripción = findViewById(R.id.etDescripcion);
         volver = findViewById(R.id.btnCancelar);
-        Guarfar = findViewById(R.id.btnActualizar);
+        guardar = findViewById(R.id.btnActualizar);
     }
 }

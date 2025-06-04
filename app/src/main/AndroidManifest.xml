@@ -21,9 +21,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="Aplicacion.api.gestor_aplication.Funcionamiento.CurrencyConverterActivity"
-            android:exported="false" />
-        <activity
             android:name="Aplicacion.api.gestor_aplication.Presupuesto.PResupuestoActual"
             android:exported="false" />
         <activity

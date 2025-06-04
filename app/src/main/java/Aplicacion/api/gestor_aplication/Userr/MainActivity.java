@@ -122,34 +122,37 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             } else if (id == R.id.descarga) {
-            try {
-                InputStream inputStream = getResources().openRawResource(R.raw.manual);
-                File downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-                File outputFile = new File(downloadDir, "manual.pdf");
+                try {
+                    InputStream inputStream = getResources().openRawResource(R.raw.manual);
 
-                OutputStream outputStream = new FileOutputStream(outputFile);
-                byte[] buffer = new byte[1024];
-                int length;
+                    File outputFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), "manual.pdf");
 
-                while ((length = inputStream.read(buffer)) > 0) {
-                    outputStream.write(buffer, 0, length);
+                    OutputStream outputStream = new FileOutputStream(outputFile);
+                    byte[] buffer = new byte[1024];
+                    int length;
+
+                    while ((length = inputStream.read(buffer)) > 0) {
+                        outputStream.write(buffer, 0, length);
+                    }
+
+                    inputStream.close();
+                    outputStream.close();
+
+                    CustomToast.show(MainActivity.this, "PDF guardado correctamente");
+
+                    Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".provider", outputFile);
+                    Intent openPdfIntent = new Intent(Intent.ACTION_VIEW);
+                    openPdfIntent.setDataAndType(uri, "application/pdf");
+                    openPdfIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+                    startActivity(openPdfIntent);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    CustomToast.show(MainActivity.this, "Error al guardar el PDF");
                 }
 
-                inputStream.close();
-                outputStream.close();
-
-                CustomToast.show(MainActivity.this,"PDF guardado en Descargas");
-
-                Intent openPdfIntent = new Intent(Intent.ACTION_VIEW);
-                Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".provider", outputFile);
-                openPdfIntent.setDataAndType(uri, "application/pdf");
-                openPdfIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                startActivity(openPdfIntent);
-
-            } catch (IOException e) {
-                CustomToast.show(MainActivity.this,"Error al guardar el PDF");
-            }
-        } else if (id == R.id.work) {
+            } else if (id == R.id.work) {
                 Intent intent = new Intent(MainActivity.this, Funcionamiento.class);
                 startActivity(intent);
             }

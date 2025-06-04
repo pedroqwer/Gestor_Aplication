@@ -133,7 +133,7 @@ public class Crear_Presupuesto extends AppCompatActivity {
                     try {
                         String errorResponse = response.errorBody() != null ? response.errorBody().string() : "Respuesta sin cuerpo";
                         Log.e("CrearPresupuesto", "Error al registrar presupuesto: " + errorResponse);
-                        CustomToast.show(Crear_Presupuesto.this, "Error al registrar presupuesto: " + errorResponse);
+                        CustomToast.show(Crear_Presupuesto.this, "Error al registrar presupuesto cantidaad invalida o ya dispone de presupuesto ");
                     } catch (IOException e) {
                         Log.e("CrearPresupuesto", "Error al leer el error del servidor", e);
                     }

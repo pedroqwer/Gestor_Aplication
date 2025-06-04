@@ -58,7 +58,8 @@ public class ActualizaMovimiento extends AppCompatActivity {
     private boolean validar() {
         boolean isValid = true;
 
-        String cantidadStr = etCantidad.getText().toString().trim();
+        // Reemplazamos coma por punto para soportar decimales en diferentes locales
+        String cantidadStr = etCantidad.getText().toString().trim().replace(",", ".");
         String descripcionStr = etDescripcion.getText().toString().trim();
         String tipoSeleccionado = (String) spinnerTipo.getSelectedItem();
 
@@ -100,8 +101,9 @@ public class ActualizaMovimiento extends AppCompatActivity {
 
         return isValid;
     }
+
     private void Actualizar() {
-        String cantidadStr = etCantidad.getText().toString().trim();
+        String cantidadStr = etCantidad.getText().toString().trim().replace(",", ".");
         String descripcion = etDescripcion.getText().toString().trim();
         String tipoSeleccionado = (String) spinnerTipo.getSelectedItem();
 
@@ -126,7 +128,6 @@ public class ActualizaMovimiento extends AppCompatActivity {
         }
 
         ActualizarMovimiento actualizarMovimiento = new ActualizarMovimiento(cantidadNueva, descripcion, tipo);
-
 
         RetrofitClient.getAPI().modificarTransaccion("Bearer " + token, idMovimiento, actualizarMovimiento)
                 .enqueue(new Callback<ResponseEntity>() {
