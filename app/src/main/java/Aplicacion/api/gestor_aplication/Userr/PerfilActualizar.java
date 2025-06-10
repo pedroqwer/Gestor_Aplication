@@ -94,8 +94,8 @@ public class PerfilActualizar extends AppCompatActivity {
         if (telefono.isEmpty()) {
             etTelefono.setError("El teléfono es obligatorio");
             isValid = false;
-        } else if (!telefono.matches("^\\d{9,15}$")) {
-            etTelefono.setError("Teléfono inválido (debe tener entre 9 y 15 dígitos)");
+        } else if (!telefono.matches("^\\d{9}$")) {
+            etTelefono.setError("Teléfono inválido (debe tener exactamente 9 dígitos)");
             isValid = false;
         } else {
             etTelefono.setError(null);
