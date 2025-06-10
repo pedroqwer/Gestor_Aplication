@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gestor_aplication.R;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 import Aplicacion.api.Entity.ActualizarPresupuestoEntity;
 import Aplicacion.api.Interfaz.IControllers;
@@ -27,8 +29,10 @@ import retrofit2.Response;
 public class ActualizarPresupuesto extends AppCompatActivity {
     private long preid = -1;
     private String token;
+    private long userId;
+    private BigDecimal saldoDisponible = BigDecimal.ZERO;
     EditText cantidad, descripción;
-    Button volver, guardar;  // corregí "Guarfar" a "guardar"
+    Button volver, guardar;
     private static final String TAG = "ActualizarPresupuesto";
 
     @Override
@@ -52,7 +56,6 @@ public class ActualizarPresupuesto extends AppCompatActivity {
     private boolean validar() {
         boolean isValid = true;
 
-        // Reemplazamos coma por punto para permitir decimales con coma
         String cantidadStr = cantidad.getText().toString().trim().replace(",", ".");
         String descripcionStr = descripción.getText().toString().trim();
 
@@ -62,8 +65,13 @@ public class ActualizarPresupuesto extends AppCompatActivity {
         } else {
             try {
                 double valor = Double.parseDouble(cantidadStr);
+                BigDecimal valorDecimal = new BigDecimal(String.valueOf(valor));
+
                 if (valor <= 0) {
                     cantidad.setError("Debe ser un número mayor a cero");
+                    isValid = false;
+                } else if (saldoDisponible.compareTo(valorDecimal) < 0) {
+                    cantidad.setError("La cantidad excede el saldo disponible");
                     isValid = false;
                 } else {
                     cantidad.setError(null);
@@ -88,7 +96,6 @@ public class ActualizarPresupuesto extends AppCompatActivity {
     }
 
     private void actualizarDatos() {
-        // Reemplazamos coma por punto también aquí
         String newCantidadStr = cantidad.getText().toString().trim().replace(",", ".");
         String newDescripcion = descripción.getText().toString().trim();
 
@@ -155,13 +162,43 @@ public class ActualizarPresupuesto extends AppCompatActivity {
 
     private void cargarPreferencias() {
         token = getSharedPreferences("AppPrefs", MODE_PRIVATE).getString("jwt_token", null);
-        if (token == null || token.isEmpty()) {
-            Log.e(TAG, "Token no disponible");
+        userId = getSharedPreferences("AppPrefs", MODE_PRIVATE).getLong("user_id", -1);
+
+        if (token == null || token.isEmpty() || userId == -1) {
+            Log.e(TAG, "Token o userId no disponible");
             Toast.makeText(this, "Error: Sesión no válida", Toast.LENGTH_SHORT).show();
             finish();
         } else {
-            Log.d(TAG, "Token obtenido correctamente");
+            Log.d(TAG, "Token y userId obtenidos correctamente");
+            consultarSaldo();
         }
+    }
+
+    private void consultarSaldo() {
+        RetrofitClient.getAPI().consultarSaldo("Bearer " + token, userId)
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful() && response.body() != null) {
+                            try {
+                                String respuesta = response.body().string();
+                                String saldoStr = respuesta.replace("Saldo:", "").trim();
+                                saldoDisponible = new BigDecimal(saldoStr);
+                                Log.d(TAG, "Saldo disponible: " + saldoDisponible);
+                            } catch (IOException e) {
+                                Log.e(TAG, "Error al leer respuesta del saldo", e);
+                            }
+                        } else {
+                            Log.e(TAG, "Error al consultar saldo: " + response.code());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Log.e(TAG, "Fallo en la llamada de saldo: " + t.getMessage());
+                        CustomToast.show(ActualizarPresupuesto.this, "No se pudo obtener el saldo");
+                    }
+                });
     }
 
     private void inicializar() {

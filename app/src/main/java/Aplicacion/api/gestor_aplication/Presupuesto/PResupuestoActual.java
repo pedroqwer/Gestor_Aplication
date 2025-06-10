@@ -24,11 +24,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class PResupuestoActual extends AppCompatActivity {
-    private long id = -1,userId,preid;
+    private long id = -1, userId, preid;
     private String token;
-    TextView descripcion, cantidad,fecha,tvExtraInfo;
+    TextView descripcion, cantidad, fecha, tvExtraInfo;
     Button volver, editar;
     private static final String TAG = "PResupuestoActual";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,15 +44,16 @@ public class PResupuestoActual extends AppCompatActivity {
             PorcentajeGastado();
         } else {
             Log.e(TAG, "Datos insuficientes - ID: " + id + ", Token: " + (token != null ? "disponible" : "null"));
-            CustomToast.show(this,"Error: No se pudo cargar la información del presupuesto");
+            CustomToast.show(this, "Error: No se pudo cargar la información del presupuesto");
             finish();
         }
 
         volver.setOnClickListener(v -> finish());
+
         editar.setOnClickListener(v -> {
             Intent intent = new Intent(PResupuestoActual.this, ActualizarPresupuesto.class);
-            intent.putExtra("descripcion", descripcion.getText().toString().replace("Descripcion: ", ""));
-            intent.putExtra("cantidad", cantidad.getText().toString().replace("Cantidad: ", ""));
+            intent.putExtra("descripcion", descripcion.getText().toString());
+            intent.putExtra("cantidad", cantidad.getText().toString());
             intent.putExtra("idPre", preid);
             startActivityForResult(intent, 200);
         });
@@ -65,7 +67,6 @@ public class PResupuestoActual extends AppCompatActivity {
                     String mensaje = response.body().getMensaje();
                     tvExtraInfo.setText(mensaje);
 
-                    // Extraer número si lo necesitas como valor double
                     Pattern pattern = Pattern.compile("(\\d+(\\.\\d+)?)%");
                     Matcher matcher = pattern.matcher(mensaje);
                     if (matcher.find()) {
@@ -85,7 +86,6 @@ public class PResupuestoActual extends AppCompatActivity {
         });
     }
 
-
     private void biscarPresupuestoActual() {
         RetrofitClient.getAPI().obtenerPresupuestoActual("Bearer " + token, userId)
                 .enqueue(new Callback<PresupuestoEntity>() {
@@ -93,19 +93,18 @@ public class PResupuestoActual extends AppCompatActivity {
                     public void onResponse(Call<PresupuestoEntity> call, Response<PresupuestoEntity> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             PresupuestoEntity presupuesto = response.body();
-                            preid=presupuesto.getId();
-                            // Mostrar descripción
-                            descripcion.setText(presupuesto.getDescripcion());
+                            preid = presupuesto.getId();
 
-                            // Convertir y mostrar cantidad con formato adecuado (dos decimales)
+                            descripcion.setText(presupuesto.getDescripcion());
                             double cantidadLimite = presupuesto.getCantidadLimite();
                             cantidad.setText(String.format(Locale.getDefault(), "%.2f", cantidadLimite));
-
-                            // Mostrar fecha
                             fecha.setText(presupuesto.getFecha());
+
+                            editar.setEnabled(true); // Habilitar botón editar
                         } else {
                             Log.e(TAG, "Error al obtener presupuesto: " + response.message());
                             CustomToast.show(PResupuestoActual.this, "No se pudo obtener el presupuesto.");
+                            editar.setEnabled(false); // Deshabilitar si no hay presupuesto
                         }
                     }
 
@@ -113,10 +112,10 @@ public class PResupuestoActual extends AppCompatActivity {
                     public void onFailure(Call<PresupuestoEntity> call, Throwable throwable) {
                         Log.e(TAG, "Fallo en la conexión: ", throwable);
                         CustomToast.show(PResupuestoActual.this, "No se pudo conectar con el servidor");
+                        editar.setEnabled(false); // Deshabilitar en caso de error
                     }
                 });
     }
-
 
     private void Preferencias() {
         userId = getSharedPreferences("AppPrefs", MODE_PRIVATE).getLong("user_id", -1);
@@ -139,7 +138,7 @@ public class PResupuestoActual extends AppCompatActivity {
     private void recibirPost() {
         Intent intent = getIntent();
         id = intent.getLongExtra("id", -1);
-        Log.d(TAG,"ID recibido: " + id);
+        Log.d(TAG, "ID recibido: " + id);
     }
 
     private void Inicializar() {
@@ -149,7 +148,11 @@ public class PResupuestoActual extends AppCompatActivity {
         volver = findViewById(R.id.btnvolver);
         editar = findViewById(R.id.btnEditar);
         tvExtraInfo = findViewById(R.id.tvExtraInfo);
+
+        // Deshabilitar botón editar por defecto
+        editar.setEnabled(false);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

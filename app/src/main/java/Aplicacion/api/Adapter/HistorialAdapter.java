@@ -50,7 +50,7 @@ public class HistorialAdapter extends ArrayAdapter<Auditoria> {
         if(historial != null){
             // Set the text to the correct views
             holder.accion.setText(historial.getAccion());
-            holder.fecha.setText(historial.getFecha());
+            holder.fecha.setText(historial.getDetalles());
         }
 
         return convertView;
