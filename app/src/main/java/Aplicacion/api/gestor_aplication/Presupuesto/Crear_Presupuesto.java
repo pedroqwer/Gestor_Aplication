@@ -112,7 +112,6 @@ public class Crear_Presupuesto extends AppCompatActivity {
 
         CreatePresupuesto presupuesto = new CreatePresupuesto(cantidadLimite, descripcion, mesActual, userId);
 
-        Toast.makeText(this, mesActual, Toast.LENGTH_SHORT).show();
         IControllers iControllers = RetrofitClient.getAPI();
         Call<ResponseEntity> call = iControllers.crearPresupuesto("Bearer " + token, presupuesto);
 
