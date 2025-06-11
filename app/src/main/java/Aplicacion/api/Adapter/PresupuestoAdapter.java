@@ -10,7 +10,11 @@ import android.widget.TextView;
 import Aplicacion.api.Entity.PresupuestoEntity;
 import com.example.gestor_aplication.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class PresupuestoAdapter extends ArrayAdapter<PresupuestoEntity> {
 
@@ -37,8 +41,10 @@ public class PresupuestoAdapter extends ArrayAdapter<PresupuestoEntity> {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.text1.setText(cortarCadenaMaximo(item.getDescripcion(), maxTexto));
-        holder.text2.setText(cortarCadenaMaximo(item.getFecha().toString(), maxTexto));
+        String mes = obtenerMesDesdeFecha(item.getFecha()); // Obtener mes desde fecha
+
+        holder.text1.setText(cortarCadenaMaximo("Presupuesto de: " + mes, maxTexto));
+        holder.text2.setText(cortarCadenaMaximo(item.getCantidadLimite().toString(), maxTexto));
 
         return convertView;
     }
@@ -53,5 +59,19 @@ public class PresupuestoAdapter extends ArrayAdapter<PresupuestoEntity> {
             return texto.substring(0, max) + "...";
         }
         return texto;
+    }
+
+    private String obtenerMesDesdeFecha(String fecha) {
+        if (fecha == null || fecha.isEmpty()) return "Fecha no disponible";
+        try {
+            SimpleDateFormat formatoEntrada = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            Date date = formatoEntrada.parse(fecha);
+
+            SimpleDateFormat formatoMes = new SimpleDateFormat("MMMM yyyy", new Locale("es", "ES")); // Ej: junio 2025
+            return formatoMes.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return "Fecha inválida";
+        }
     }
 }
