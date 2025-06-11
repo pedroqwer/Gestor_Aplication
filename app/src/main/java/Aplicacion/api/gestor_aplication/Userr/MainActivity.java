@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             if (id == R.id.Ayuda) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("message/rfc822");
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"sanchezpere80@gmail.com.com"});
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"pedsanboi@alu.edu.gva.es"});
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Aplicacion");
                 intent.putExtra(Intent.EXTRA_TEXT, "Hola, necesito ayuda con...");
 
